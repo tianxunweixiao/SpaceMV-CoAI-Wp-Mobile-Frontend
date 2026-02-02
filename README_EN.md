@@ -20,9 +20,9 @@
  
  </div>
 
-[SpaceMV-CoAI-Wp-Mobile-Frontend](https://github.com/tianxunweixiao/SpaceMV-CoAI-Wp-Mobile-Frontend/tree/main) is an Industrial Planet Operations AI Agent's SpaceMV-CoAI-Wp (Enterprise Official Website) mobile display project developed by Chengdu Tianxun Micro Satellite Technology Co., Ltd. As the mobile frontend display component of the SpaceMV-CoAI-Wp (Enterprise Official Website) module in the SpaceMV-CoAI Industrial Planet Operations AI Agent, it is responsible for presenting the SpaceMV-CoAI-Wp (Enterprise Official Website) content managed in the backend in a modern, responsive manner, achieving real-time synchronized display of SpaceMV-CoAI-Wp (Enterprise Official Website) content.
+[SpaceMV-CoAI-Wp-Mobile-Frontend](https://github.com/tianxunweixiao/SpaceMV-CoAI-Wp-Mobile-Frontend) is an Industrial Planet Operations AI Agent's SpaceMV-CoAI-Wp (Enterprise Official Website) mobile display project developed by Chengdu Tianxun Micro Satellite Technology Co., Ltd. As the mobile frontend display component of the SpaceMV-CoAI-Wp (Enterprise Official Website) module in the SpaceMV-CoAI Industrial Planet Operations AI Agent, it is responsible for presenting the SpaceMV-CoAI-Wp (Enterprise Official Website) content managed in the backend in a modern, responsive manner, achieving real-time synchronized display of SpaceMV-CoAI-Wp (Enterprise Official Website) content.
 
-[SpaceMV-CoAI-Wp-Mobile-Frontend](https://github.com/tianxunweixiao/SpaceMV-CoAI-Wp-Mobile-Frontend/tree/main), as an Industrial Planet Operations AI Agent's SpaceMV-CoAI-Wp (Enterprise Official Website) mobile display system, features responsive layout, real-time content synchronization display functionality, which can present the SpaceMV-CoAI-Wp (Enterprise Official Website) content managed in the backend in a modern, aesthetically pleasing way, and supports multi-device adaptation. It also provides a smooth browsing experience for visitors through optimized loading performance, helping to enhance brand image and user conversion rates.
+[SpaceMV-CoAI-Wp-Mobile-Frontend](https://github.com/tianxunweixiao/SpaceMV-CoAI-Wp-Mobile-Frontend), as an Industrial Planet Operations AI Agent's SpaceMV-CoAI-Wp (Enterprise Official Website) mobile display system, features responsive layout, real-time content synchronization display functionality, which can present the SpaceMV-CoAI-Wp (Enterprise Official Website) content managed in the backend in a modern, aesthetically pleasing way, and supports multi-device adaptation. It also provides a smooth browsing experience for visitors through optimized loading performance, helping to enhance brand image and user conversion rates.
 
 `SpaceMV-CoAI-Wp-Mobile-Frontend`, as an Industrial Planet Operations AI Agent's SpaceMV-CoAI-Wp (Enterprise Official Website) mobile frontend display system, assumes key functions such as modern presentation of SpaceMV-CoAI-Wp (Enterprise Official Website) content, responsive layout adaptation, and multi-device access optimization.
 
@@ -274,7 +274,7 @@ We warmly welcome community developers to participate in the construction of the
 
 This project adopts the MIT license.
 
-Copyright (c) 2026 Chengdu Tianxun Micro Satellite Technology Co., Ltd.
+Copyright (c) 2026 成都天巡微小卫星科技有限责任公司
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
