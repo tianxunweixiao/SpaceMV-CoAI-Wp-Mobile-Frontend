@@ -1,0 +1,17 @@
+@import url('normalize.css');
+@import url('@/styles/theme.less');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  font-size: 28px;
+}
+
+/* 处理 vm 适配图片不显示问题 */
+img {
+  content: normal !important;
+}

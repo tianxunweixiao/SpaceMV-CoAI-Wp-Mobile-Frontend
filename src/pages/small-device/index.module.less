@@ -1,0 +1,193 @@
+.root {
+  :global {
+    .product-wrap {
+      position: relative;
+
+      .product-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .product-info {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .product-name {
+        font-weight: bold;
+        font-size: 34px;
+        color: #1d2f84;
+        padding: 8px 16px;
+        margin: 0 16px;
+      }
+
+      .product-introduction {
+        font-weight: bold;
+        font-size: 26px;
+        color: #1d2f84;
+        padding: 8px 16px;
+        margin: 16px;
+      }
+    }
+
+    .detailed-introduction {
+      font-size: 22px;
+      word-break: break-word;
+      background-color: rgba(231, 235, 245, 0.7);
+      border-radius: 16px;
+      line-height: 32px;
+      color: #434343;
+      padding: 24px;
+      margin: -60px 16px 0 16px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .scene-wrap {
+      padding: 48px 36px 65px;
+      box-sizing: border-box;
+
+      .scene-title {
+        text-align: center;
+        font-weight: bold;
+        font-size: var(--font-size-large);
+        color: var(--cr-blue);
+        margin-bottom: 33px;
+      }
+
+      .scene-list {
+        display: flex;
+        flex-direction: column;
+        gap: 65px;
+      }
+
+      .scent-item {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .item-label {
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+          font-size: var(--font-size-mediumer);
+          color: var(--cr-blue);
+
+          &::before {
+            display: inline-block;
+            content: '';
+            width: 4px;
+            height: 30px;
+            margin-right: 14px;
+            background-color: var(--bg-main);
+          }
+        }
+
+        .item-con {
+          color: var(--cr-gray-deep);
+          line-height: 45px;
+        }
+      }
+    }
+
+    .device-info-img {
+      margin-bottom: -8px;
+    }
+
+    .typical-case-wrap {
+      background: #121726;
+      padding: 60px;
+      .typical-case-title {
+        color: var(--cr-white);
+        font-size: var(--font-size-large);
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .typical-case-item {
+      
+        margin-bottom: 48px;
+
+        .case-product-introduction {
+          font-size: var(--font-size-mediumer);
+          font-weight: bold;
+          color: #2696D9;
+          margin: 40px 0;
+          text-align: center;
+        }
+
+        .case-product-icon-left {
+          margin-bottom: 20px;
+          margin-right: 16px;
+          width: 18px;
+          height: 18px;
+          border-left: 4px solid #2696D9;
+          border-top: 4px solid #2696D9;
+        }
+
+        .case-product-icon-right {
+          margin-top: 20px;
+          margin-left: 16px;
+          width: 18px;
+          height: 18px;
+          border-right: 4px solid #2696D9;
+          border-bottom: 4px solid #2696D9;
+        }
+
+        .case-detailed-introduction {
+          font-size: var(--font-size-small);
+          color: #cecfd2;
+          line-height: 2;
+          margin-bottom: 24px;
+        }
+
+        .case-functions-wrap {
+          display: flex;
+          justify-content: space-between;
+          gap: 24px;
+          margin-bottom: 24px;
+          background-color: #1d243a;
+          padding: 24px;
+          border-radius: 16px;
+          .case-standard-functions,
+          .case-custom-services {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .case-functions-title {
+              font-size: var(--font-size-medium);
+              font-weight: bold;
+              color: #2696D9;
+              margin-bottom: 16px;
+            }
+
+            .case-function-item {
+              font-size: var(--font-size-smaller);
+              color: #cecfd2;
+              line-height: 30px;
+              margin-bottom: 16px;
+            }
+          }
+        }
+
+        .case-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .case-divider {
+          height: 1px;
+          background-color: #e0e0e0;
+          margin: 48px 0;
+        }
+      }
+    }
+  }
+}

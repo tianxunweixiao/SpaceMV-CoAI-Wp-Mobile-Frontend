@@ -1,0 +1,44 @@
+.root {
+  background-color: var(--bg-white-light);
+
+  :global {
+    .dynamic-wrap {
+      padding: 35px 35px 69px 35px;
+      box-sizing: border-box;
+
+      .dynamic-title {
+        margin-bottom: 40px;
+        font-weight: bold;
+        font-size: var(--font-size-large);
+        color: var(--cr-blue);
+      }
+
+      .dynamic-list {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        .dynamic-item {
+          border-radius: 4px;
+          background-color: var(--bg-white);
+        }
+
+        .dynamic-info {
+          padding: 28px 30px;
+          box-sizing: border-box;
+          font-size: 24px;
+
+          .info-con {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 40px;
+            color: var(--cr-black-deep);
+          }
+        }
+      }
+    }
+  }
+}
