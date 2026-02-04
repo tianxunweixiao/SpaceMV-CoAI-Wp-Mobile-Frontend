@@ -302,6 +302,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 * **Discussions**: [GitHub Discussions](https://github.com/tianxunweixiao/SpaceMV-CoAI-Wp-Mobile-Frontend/discussions)
 
 更多信息可关注公司微信公众号：
+
 <img width="106" height="106" alt="image" src="https://github.com/user-attachments/assets/69a02ad0-422c-422a-bf5f-9b7890cf31ab" />
 
 ## 贡献者
