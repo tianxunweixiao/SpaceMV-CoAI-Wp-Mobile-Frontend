@@ -42,6 +42,8 @@ function AboutUs() {
   }
 
   const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!e.changedTouches || e.changedTouches.length === 0) return
+    
     const touchEnd = e.changedTouches[0].clientX
     const minSwipeDistance = 50 // 最小滑动距离，防止误触
 
