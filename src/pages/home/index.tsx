@@ -7,6 +7,7 @@ import { setMenuIdx } from '@/store/modules/menuReducer'
 import { getCompanyInfoConfig, CompanyInfoConfig, getCompanyProfileByPublishStatus } from '@/api/company'
 import { getMainPageContent, MainPageData, CarouselImage, MainProduct } from '@/api/mainPage'
 import { isPreviewMode, buildPathWithParams } from '@/router'
+import DOMPurify from 'dompurify'
 import styles from './index.module.less'
 
 function Home() {
@@ -68,7 +69,7 @@ function Home() {
             <div 
               className="mt-53 info-content"
               dangerouslySetInnerHTML={{
-                __html: profileContent
+                __html: DOMPurify.sanitize(profileContent)
               }}
             />
             <div

@@ -10,6 +10,7 @@ import { useAppDispatch } from '@/store'
 import { setMenuIdx } from '@/store/modules/menuReducer'
 import { getCompanyInfoConfig, CompanyInfoConfig, getProductCertsByPublishStatus, getCompanyProfileByPublishStatus } from '@/api/company'
 import { isPreviewMode } from '@/router'
+import DOMPurify from 'dompurify'
 import styles from './index.module.less'
 
 function AboutUs() {
@@ -74,7 +75,7 @@ function AboutUs() {
       <div className="company-wrap">
         <div className="company-title">公司简介</div>
         {companyProfile?.profileTwo && (
-          <div className="company-con" dangerouslySetInnerHTML={{ __html: companyProfile.profileTwo }} />
+          <div className="company-con" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(companyProfile.profileTwo) }} />
         )}
       </div>
       <div className="product-wrap">
