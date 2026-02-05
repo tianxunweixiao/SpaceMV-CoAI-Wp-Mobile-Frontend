@@ -15,6 +15,7 @@ import postcssWriteSvg from 'postcss-write-svg'
 // @ts-ignore
 import tailwindcss from 'tailwindcss'
 import { defineConfig } from 'vite'
+import { UserConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -66,12 +67,12 @@ export default defineConfig({
       '/dev-api/': {
         target: 'http://localhost:8080',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/dev-api/, '')
+        rewrite: (path: string) => path.replace(/^\/dev-api/, '')
       },
       '/prod-api/': {
         target: 'http://localhost:8080',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/prod-api/, '')
+        rewrite: (path: string) => path.replace(/^\/prod-api/, '')
       }
     }
   },
@@ -86,4 +87,4 @@ export default defineConfig({
       exclude: ['src/**/*.d.ts', 'src/main.tsx']
     }
   }
-})
+} as any)

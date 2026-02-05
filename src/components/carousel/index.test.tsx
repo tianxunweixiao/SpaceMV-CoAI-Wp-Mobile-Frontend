@@ -1,5 +1,5 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, screen, fireEvent } from '@testing-library/react'
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { render, screen, fireEvent, act } from '@testing-library/react'
 import Carousel from './index'
 
 vi.mock('@/components/iconfont', () => ({
@@ -100,7 +100,9 @@ describe('Carousel Component', () => {
     render(<Carousel items={mockItems} autoplay={true} interval={100} />)
     
     // 测试自动播放功能是否能够正常初始化
-    vi.advanceTimersByTime(100)
+    act(() => {
+      vi.advanceTimersByTime(100)
+    })
     // 由于无法直接测试样式变化，我们只测试定时器是否能够正常触发
     expect(true).toBe(true)
   })
@@ -109,7 +111,9 @@ describe('Carousel Component', () => {
     render(<Carousel items={mockItems} autoplay={false} />)
     
     // 测试自动播放功能是否被禁用
-    vi.advanceTimersByTime(5000)
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
     // 由于无法直接测试样式变化，我们只测试定时器是否被禁用
     expect(true).toBe(true)
   })
