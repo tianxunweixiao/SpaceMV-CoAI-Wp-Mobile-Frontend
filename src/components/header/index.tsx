@@ -73,11 +73,6 @@ function Header() {
     if (import.meta.env.VITE_ENV === 'intranet') return 'intranet'
     if (import.meta.env.VITE_ENV === 'extranet') return 'extranet'
     
-    const hostname = window.location.hostname
-    if (hostname.includes('intranet') || hostname.includes('internal') || hostname.includes('corp')) {
-      return 'intranet'
-    }
-    
     return 'extranet'
   }
 
