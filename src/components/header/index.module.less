@@ -95,6 +95,37 @@
               background-color: var(--bg-blue-light);
               color: var(--cr-white);
             }
+
+            .drop-list {
+              position: relative;
+              justify-content: space-between;
+              flex-direction: row;
+            }
+
+            .drop-arrow {
+              font-size: 12px;
+              margin-left: 8px;
+            }
+
+            .drop-list-content {
+              margin-top: 8px;
+              background-color: #f8f9fa;
+              border-radius: 12px;
+              padding: 8px 0;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .drop-list-item {
+              padding: 12px 32px;
+              cursor: pointer;
+              transition: all 0.2s ease;
+              border-radius: 8px;
+              margin: 0 8px;
+
+              &:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+              }
+            }
           }
         }
       }

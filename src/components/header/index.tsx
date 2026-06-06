@@ -4,16 +4,24 @@ import { useEffect, useState, Fragment } from 'react'
 import { toast } from '@/components/toast/ToastManager.tsx'
 import { useAppDispatch, useAppSelector } from '@/store'
 import { setMenuIdx, setMenuOpen } from '@/store/modules/menuReducer'
-import { getTopButtons } from '@/api/topButton'
+import { getTopButtons, ButtonType } from '@/api/topButton'
 
 import { isPreviewMode, buildPathWithParams } from '@/router'
 import styles from './index.module.less'
+
+interface DropButtonItem {
+  text: string
+  link: string
+}
 
 interface LinkItem {
   name: string
   path: string
   type: 'menu' | 'link'
   status?: 'developing' | 'complete' | 'completeSelf' | 'completeNav'
+  buttonType?: ButtonType
+  dropButtonList?: DropButtonItem[]
+  isDropListOpen?: boolean
 }
 
 const MENU_MAP: LinkItem[] = [
@@ -90,7 +98,10 @@ function Header() {
                 name: item.buttonText || '',
                 path: item.jumpUrl || '',
                 type: 'link', 
-                status: item.state === '1' ? 'complete' : item.state === '2' ? 'completeSelf' : item.state === '3' ? 'completeNav' : 'developing'
+                status: item.state === '1' ? 'complete' : item.state === '2' ? 'completeSelf' : item.state === '3' ? 'completeNav' : 'developing',
+                buttonType: item.buttonType,
+                dropButtonList: item.dropButtonList,
+                isDropListOpen: false
               }
               return obj
             })
@@ -103,8 +114,24 @@ function Header() {
       })
   }, [])
 
+  function toggleDropList(index: number) {
+    setMenuMap(prevMenuMap => {
+      return prevMenuMap.map((item, i) => {
+        if (i === index) {
+          return {
+            ...item,
+            isDropListOpen: !item.isDropListOpen
+          }
+        }
+        return item
+      })
+    })
+  }
+
   function handleMenuClick(item: LinkItem, index: number) {
-    if (item.type === 'menu') {
+    if (item.buttonType === ButtonType.dropList) {
+      toggleDropList(index)
+    } else if (item.type === 'menu') {
       const targetPath = isPreviewMode() ? `/preview${item.path === '/' ? '' : item.path}` : item.path
       const fullPath = buildPathWithParams(targetPath)
       nav(fullPath)
@@ -114,6 +141,11 @@ function Header() {
       else if (item.status === 'developing') toast.info('正在开发中！')
     }
 
+    dispatch(setMenuOpen(false))
+  }
+
+  function handleDropButtonClick(link: string) {
+    window.open(link)
     dispatch(setMenuOpen(false))
   }
 
@@ -142,14 +174,46 @@ function Header() {
             <div className="menu-content">
               {menuMap.map((item, index) => (
                 <Fragment key={index}>
-                  <div
-                    className={classNames('menu-item', {
-                      active: index === menuIdx
-                    })}
-                    onClick={() => handleMenuClick(item, index)}
-                  >
-                    {item.name}
-                  </div>
+                  {item.buttonType === ButtonType.image ? (
+                    <div
+                      className={classNames('menu-item', {
+                        active: index === menuIdx
+                      })}
+                      onClick={() => handleMenuClick(item, index)}
+                    >
+                      <img src={item.path} alt={item.name} style={{ maxHeight: '20px' }} />
+                    </div>
+                  ) : (
+                    <>
+                      <div
+                        className={classNames('menu-item', {
+                          active: index === menuIdx,
+                          'drop-list': item.buttonType === ButtonType.dropList
+                        })}
+                        onClick={() => handleMenuClick(item, index)}
+                      >
+                        {item.name}
+                        {item.buttonType === ButtonType.dropList && (
+                          <span className="drop-arrow">
+                            {item.isDropListOpen ? '▼' : '▶'}
+                          </span>
+                        )}
+                      </div>
+                      {item.buttonType === ButtonType.dropList && item.isDropListOpen && item.dropButtonList && item.dropButtonList.length > 0 && (
+                        <div className="drop-list-content">
+                          {item.dropButtonList.map((dropItem, dropIndex) => (
+                            <div
+                              key={dropIndex}
+                              className="drop-list-item"
+                              onClick={() => handleDropButtonClick(dropItem.link)}
+                            >
+                              {dropItem.text}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  )}
                   {index === 4 && <div className="line" />}
                 </Fragment>
               ))}

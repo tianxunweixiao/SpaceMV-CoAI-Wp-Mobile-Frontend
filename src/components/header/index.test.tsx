@@ -6,6 +6,11 @@ import Header from './index'
 // Mock API calls
 vi.mock('@/api/topButton', () => ({
   getTopButtons: vi.fn(),
+  ButtonType: {
+    text: '1',
+    image: '2',
+    dropList: '3'
+  }
 }))
 
 // Mock components
